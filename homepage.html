@@ -40,56 +40,23 @@
            <img src="https://nineplanets.org/wp-content/uploads/2020/07/SouthernCross.jpg" alt="Using Angle Measurements to Find Latitude">
 
 
-           <h2>Find the angle if in Northern Hemisphere, and input it in here!</h2>
+           <h2>Find the angle betwen North Star and Horizon if in Northern Hemisphere, 
+            or Southern Cross and Horizon in Southern Hemisphere, and input it in here!</h2>
            <input type="number" id="angle" placeholder="Enter angle found!">
            <button onclick="latitudeInNorthernHemisphere()">Enter</button>
            <div id="result"></div>
            <script>
-            function latitudeInNorthernHemisphere(angleBetweenPolarisAndHorizon) {
-                // Angle between Polaris and the horizon is the latitude;
-                return angleBetweenPolarisAndHorizon;
-            }
-
-            function latitudeInSouthernHemisphere(angleBetweenSouthernCrossAndHorizon) {
+            function latitdude(angleBetweenNorthStarOrSouthernCrossAndHorizon) {
                 // Angle between Southern Cross and the horizon is the latitude
-                return angleBetweenSouthernCrossAndHorizon;
+                return angleBetweenNorthStarOrSouthernCrossAndHorizon;
             }
 
-            function calculateLongitude(originalLongitude,originalLocationTime, localTime) {
-                // Longitude is calculated by the difference in time between the Prime Meridian
-                // and traveling around 15 degrees of longitude per hour
-                if ((originalLongitude + ((originalLocationTime - localTime) * 15)) > 180) {
-                    var longitude = (originalLongitude + ((originalLocationTime - localTime) * 15)) - 180
-                }
-                var longitude = (originalLongitude + ((originalLocationTime - localTime) * 15));
-                return longitude;
+            function calculateLatitudeNorthernHemisphere() {
+                var angle = parseFloat(document.getElementById('angle').value);
+                var latitude = latitudeInNorthernHemisphere(angle);
+                document.getElementById('result').textContent = "Latitude: " + latitude;
             }
            </script>
-
-           <h2>Find the angle if in Southern Hemisphere, and input it in here!</h2>
-           <input type="number" id="angle" placeholder="Enter angle found!">
-           <button onclick="latitudeInSouthernHemisphere()">Enter</button>
-           <div id="result"></div>
-           <script>
-            function latitudeInNorthernHemisphere(angleBetweenPolarisAndHorizon) {
-                // Angle between Polaris and the horizon is the latitude;
-                return angleBetweenPolarisAndHorizon;
-            }
-
-            function latitudeInSouthernHemisphere(angleBetweenSouthernCrossAndHorizon) {
-                // Angle between Southern Cross and the horizon is the latitude
-                return angleBetweenSouthernCrossAndHorizon;
-            }
-
-            function calculateLongitude(originalLongitude,originalLocationTime, localTime) {
-                // Longitude is calculated by the difference in time between the Prime Meridian
-                // and traveling around 15 degrees of longitude per hour
-                if ((originalLongitude + ((originalLocationTime - localTime) * 15)) > 180) {
-                    var longitude = (originalLongitude + ((originalLocationTime - localTime) * 15)) - 180
-                }
-                var longitude = (originalLongitude + ((originalLocationTime - localTime) * 15));
-                return longitude;
-            }
            </script>
        
            P.S - The latitude is essentially the same as the angle! This is because both the North Star and the Southern Cross are almost right in line with
@@ -117,16 +84,6 @@
            <button onclick="calculateLongitude()">Enter</button>
            <div id="result"></div>
            <script>
-            function latitudeInNorthernHemisphere(angleBetweenPolarisAndHorizon) {
-                // Angle between Polaris and the horizon is the latitude;
-                return angleBetweenPolarisAndHorizon;
-            }
-
-            function latitudeInSouthernHemisphere(angleBetweenSouthernCrossAndHorizon) {
-                // Angle between Southern Cross and the horizon is the latitude
-                return angleBetweenSouthernCrossAndHorizon;
-            }
-
             function calculateLongitude(originalLongitude,originalLocationTime, localTime) {
                 // Longitude is calculated by the difference in time between the Prime Meridian
                 // and traveling around 15 degrees of longitude per hour
