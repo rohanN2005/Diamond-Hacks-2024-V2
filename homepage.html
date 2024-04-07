@@ -86,7 +86,7 @@
                 var originalLocationTime = document.getElementById("timeAtPlaceOfDeparture").value;
                 var originalLongitude = document.getElementById("longitudeAtPlaceOfDeparture").value;
                 if ((originalLongitude + ((originalLocationTime - localTime) * 15)) > 180) {
-                    var longitude = (originalLongitude + ((originalLocationTime - localTime) * 15)) - 180
+                    var longitude = (originalLongitude + ((originalLocationTime - localTime) * 15)) - 180;
                 }
                 var longitude = (originalLongitude + ((originalLocationTime - localTime) * 15));
                 console.log(longitude);
