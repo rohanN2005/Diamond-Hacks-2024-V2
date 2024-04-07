@@ -39,21 +39,25 @@
 
            <img src="https://nineplanets.org/wp-content/uploads/2020/07/SouthernCross.jpg" alt="Using Angle Measurements to Find Latitude">
 
-
            <h2>Find the angle betwen North Star and Horizon if in Northern Hemisphere, 
             or Southern Cross and Horizon in Southern Hemisphere, and input it in here!</h2>
-           <input type="number" id="angle" placeholder="Enter angle found!">
-           <button onclick="latitdude()">Enter</button>
-           <div id="result"></div>
-           <script>
-            function latitdude() {
-                // Angle between Southern Cross and the horizon is the latitude
-                var angleBetweenNorthStarOrSouthernCrossAndHorizon = document.getElementById("angle").value;
-                console.log(angleBetweenNorthStarOrSouthernCrossAndHorizon);
-                result.textContent = 'The latitude is: ' + angleBetweenNorthStarOrSouthernCrossAndHorizon;
-            }
-           </script> 
-           <p id='result'></p>    
+            <input type="number" id="angle" placeholder="Enter angle found!">
+            <button onclick="calculateLatitude()">Enter</button>
+            <p id="result"></p> <!-- Unique ID for the result -->
+            
+            <script>
+                function calculateLatitude() {
+                    var angleBetweenNorthStarOrSouthernCrossAndHorizon = document.getElementById("angle").value;
+                    console.log(angleBetweenNorthStarOrSouthernCrossAndHorizon);
+                    
+                    // Replace this comment with your actual latitude calculation
+                    // For demonstration, let's just use the angle directly as latitude
+                    var latitude = angleBetweenNorthStarOrSouthernCrossAndHorizon;
+                    
+                    // Display the result in the <p> element with the ID "result"
+                    document.getElementById("result").textContent = 'The latitude is: ' + latitude;
+                }
+            </script>
            P.S - The latitude is essentially the same as the angle! This is because both the North Star and the Southern Cross are almost right in line with
            the North and South Pole! As such when getting the angle, it tells your latitude. Just that when youre in the Southern Hemispehre, 
            the angle is notated as negative. 
