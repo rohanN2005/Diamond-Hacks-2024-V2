@@ -43,22 +43,17 @@
            <h2>Find the angle betwen North Star and Horizon if in Northern Hemisphere, 
             or Southern Cross and Horizon in Southern Hemisphere, and input it in here!</h2>
            <input type="number" id="angle" placeholder="Enter angle found!">
-           <button onclick="latitudeInNorthernHemisphere()">Enter</button>
+           <button onclick="latitdude()">Enter</button>
            <div id="result"></div>
            <script>
-            function latitdude(angleBetweenNorthStarOrSouthernCrossAndHorizon) {
+            function latitdude() {
                 // Angle between Southern Cross and the horizon is the latitude
-                return angleBetweenNorthStarOrSouthernCrossAndHorizon;
+                var angleBetweenNorthStarOrSouthernCrossAndHorizon = document.getElementById("angle").value;
+                console.log(angleBetweenNorthStarOrSouthernCrossAndHorizon);
+                result.textContent = 'The latitude is: ' + angleBetweenNorthStarOrSouthernCrossAndHorizon;
             }
-
-            function calculateLatitudeNorthernHemisphere() {
-                var angle = parseFloat(document.getElementById('angle').value);
-                var latitude = latitudeInNorthernHemisphere(angle);
-                document.getElementById('result').textContent = "Latitude: " + latitude;
-            }
-           </script>
-           </script>
-       
+           </script> 
+           <p id='result'></p>    
            P.S - The latitude is essentially the same as the angle! This is because both the North Star and the Southern Cross are almost right in line with
            the North and South Pole! As such when getting the angle, it tells your latitude. Just that when youre in the Southern Hemispehre, 
            the angle is notated as negative. 
@@ -87,11 +82,15 @@
             function calculateLongitude(originalLongitude,originalLocationTime, localTime) {
                 // Longitude is calculated by the difference in time between the Prime Meridian
                 // and traveling around 15 degrees of longitude per hour
+                var originalLongitude = document.getElementById("timeAtCurrentPlace").value;
+                var originalLongitude = document.getElementById("timeAtPlaceOfDeparture").value;
+                var originalLongitude = document.getElementById("longitudeAtPlaceOfDeparture").value;
                 if ((originalLongitude + ((originalLocationTime - localTime) * 15)) > 180) {
                     var longitude = (originalLongitude + ((originalLocationTime - localTime) * 15)) - 180
                 }
                 var longitude = (originalLongitude + ((originalLocationTime - localTime) * 15));
-                return longitude;
+                console.log(longitude);
+                result.textContent = 'The longitude is: ' + longitude;
             }
            </script>
 
