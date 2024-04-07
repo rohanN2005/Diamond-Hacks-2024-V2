@@ -82,8 +82,8 @@
             function calculateLongitude() {
                 // Longitude is calculated by the difference in time between the Prime Meridian
                 // and traveling around 15 degrees of longitude per hour
-                var originalLongitude = document.getElementById("timeAtCurrentPlace").value;
-                var originalLongitude = document.getElementById("timeAtPlaceOfDeparture").value;
+                var localTime = document.getElementById("timeAtCurrentPlace").value;
+                var originalLocationTime = document.getElementById("timeAtPlaceOfDeparture").value;
                 var originalLongitude = document.getElementById("longitudeAtPlaceOfDeparture").value;
                 if ((originalLongitude + ((originalLocationTime - localTime) * 15)) > 180) {
                     var longitude = (originalLongitude + ((originalLocationTime - localTime) * 15)) - 180
