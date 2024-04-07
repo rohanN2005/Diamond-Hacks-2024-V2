@@ -37,13 +37,53 @@
            <input type="number" id="angle" placeholder="Enter angle found!">
            <button onclick="latitudeInNorthernHemisphere()">Enter</button>
            <div id="result"></div>
-           <script src="Coordinates.js"></script>
+           <script>
+            function latitudeInNorthernHemisphere(angleBetweenPolarisAndHorizon) {
+                // Angle between Polaris and the horizon is the latitude;
+                return angleBetweenPolarisAndHorizon;
+            }
+
+            function latitudeInSouthernHemisphere(angleBetweenSouthernCrossAndHorizon) {
+                // Angle between Southern Cross and the horizon is the latitude
+                return angleBetweenSouthernCrossAndHorizon;
+            }
+
+            function calculateLongitude(originalLongitude,originalLocationTime, localTime) {
+                // Longitude is calculated by the difference in time between the Prime Meridian
+                // and traveling around 15 degrees of longitude per hour
+                if ((originalLongitude + ((originalLocationTime - localTime) * 15)) > 180) {
+                    var longitude = (originalLongitude + ((originalLocationTime - localTime) * 15)) - 180
+                }
+                var longitude = (originalLongitude + ((originalLocationTime - localTime) * 15));
+                return longitude;
+            }
+           </script>
 
            <h2>Find the angle if in Southern Hemisphere, and input it in here!</h2>
            <input type="number" id="angle" placeholder="Enter angle found!">
            <button onclick="latitudeInSouthernHemisphere()">Enter</button>
            <div id="result"></div>
-           <script src="Coordinates.js"></script>
+           <script>
+            function latitudeInNorthernHemisphere(angleBetweenPolarisAndHorizon) {
+                // Angle between Polaris and the horizon is the latitude;
+                return angleBetweenPolarisAndHorizon;
+            }
+
+            function latitudeInSouthernHemisphere(angleBetweenSouthernCrossAndHorizon) {
+                // Angle between Southern Cross and the horizon is the latitude
+                return angleBetweenSouthernCrossAndHorizon;
+            }
+
+            function calculateLongitude(originalLongitude,originalLocationTime, localTime) {
+                // Longitude is calculated by the difference in time between the Prime Meridian
+                // and traveling around 15 degrees of longitude per hour
+                if ((originalLongitude + ((originalLocationTime - localTime) * 15)) > 180) {
+                    var longitude = (originalLongitude + ((originalLocationTime - localTime) * 15)) - 180
+                }
+                var longitude = (originalLongitude + ((originalLocationTime - localTime) * 15));
+                return longitude;
+            }
+           </script>
        
            P.S - The latitude is essentially the same as the angle! This is because both the North Star and the Southern Cross are almost right in line with
            the North and South Pole! As such when getting the angle, it tells your latitude. Just that when youre in the Southern Hemispehre, 
@@ -69,7 +109,27 @@
            <input type="number" id="longitudeAtPlaceOfDeparture" placeholder="longitudeAtPlaceOfDeparture">
            <button onclick="calculateLongitude()">Enter</button>
            <div id="result"></div>
-           <script src="Coordinates.js"></script>
+           <script>
+            function latitudeInNorthernHemisphere(angleBetweenPolarisAndHorizon) {
+                // Angle between Polaris and the horizon is the latitude;
+                return angleBetweenPolarisAndHorizon;
+            }
+
+            function latitudeInSouthernHemisphere(angleBetweenSouthernCrossAndHorizon) {
+                // Angle between Southern Cross and the horizon is the latitude
+                return angleBetweenSouthernCrossAndHorizon;
+            }
+
+            function calculateLongitude(originalLongitude,originalLocationTime, localTime) {
+                // Longitude is calculated by the difference in time between the Prime Meridian
+                // and traveling around 15 degrees of longitude per hour
+                if ((originalLongitude + ((originalLocationTime - localTime) * 15)) > 180) {
+                    var longitude = (originalLongitude + ((originalLocationTime - localTime) * 15)) - 180
+                }
+                var longitude = (originalLongitude + ((originalLocationTime - localTime) * 15));
+                return longitude;
+            }
+           </script>
 
            P.S - The longitude is calculated by the time shift between the current time and the time at where one was originaly
            (as times shift as one goes away from a place due to time zones). This difference is multiplied by 15 degrees, because it 
