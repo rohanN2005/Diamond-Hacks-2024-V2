@@ -81,22 +81,28 @@
            <input type="number" id="timeAtPlaceOfDeparture" placeholder="timeAtPlaceOfDeparture">
            <input type="number" id="longitudeAtPlaceOfDeparture" placeholder="longitudeAtPlaceOfDeparture">
            <button onclick="calculateLongitude()">Enter</button>
-           <div id="result"></div>
+           <p id="result1"></p>
            <script>
-            function calculateLongitude() {
-                // Longitude is calculated by the difference in time between the Prime Meridian
-                // and traveling around 15 degrees of longitude per hour
-                var localTime = document.getElementById("timeAtCurrentPlace").value;
-                var originalLocationTime = document.getElementById("timeAtPlaceOfDeparture").value;
-                var originalLongitude = document.getElementById("longitudeAtPlaceOfDeparture").value;
-                if ((originalLongitude + ((originalLocationTime - localTime) * 15)) > 180) {
-                    var longitude = (originalLongitude + ((originalLocationTime - localTime) * 15)) - 180;
-                }
-                var longitude = (originalLongitude + ((originalLocationTime - localTime) * 15));
-                console.log(longitude);
-                result.textContent = 'The longitude is: ' + longitude;
-            }
+               function calculateLongitude() {
+                   // Longitude is calculated by the difference in time between the Prime Meridian
+                   // and traveling around 15 degrees of longitude per hour
+                   var localTime = document.getElementById("timeAtCurrentPlace").value;
+                   var originalLocationTime = document.getElementById("timeAtPlaceOfDeparture").value;
+                   var originalLongitude = document.getElementById("longitudeAtPlaceOfDeparture").value;
+                   
+                   var longitude;
+                   if ((originalLongitude + ((originalLocationTime - localTime) * 15)) > 180) {
+                       longitude = (originalLongitude + ((originalLocationTime - localTime) * 15)) - 180;
+                   } else {
+                       longitude = (originalLongitude + ((originalLocationTime - localTime) * 15));
+                   }
+                   console.log(longitude);
+                   document.getElementById("result1").textContent = 'The longitude is: ' + longitude;
+               }
            </script>
+           
+           
+           
 
            P.S - The longitude is calculated by the time shift between the current time and the time at where one was originaly
            (as times shift as one goes away from a place due to time zones). This difference is multiplied by 15 degrees, because it 
